@@ -45,11 +45,11 @@
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="jCkbIngles" max="32767" attributes="0"/>
                   <Component id="jCkbInformatica" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jButtonVerificar" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jButtonMarcar" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jButtonDesmarcar" alignment="0" pref="96" max="32767" attributes="0"/>
+                  <Component id="jBtnVerificar" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jBtnMarcar" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jBtnDesmarcar" alignment="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="211" max="32767" attributes="0"/>
+              <EmptySpace pref="197" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -60,11 +60,11 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jCkbInformatica" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jButtonVerificar" min="-2" max="-2" attributes="0"/>
+              <Component id="jBtnVerificar" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jButtonMarcar" min="-2" max="-2" attributes="0"/>
+              <Component id="jBtnMarcar" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jButtonDesmarcar" min="-2" max="-2" attributes="0"/>
+              <Component id="jBtnDesmarcar" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="43" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -73,39 +73,42 @@
   <SubComponents>
     <Component class="javax.swing.JCheckBox" name="jCkbIngles">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Ingles"/>
+        <Property name="text" type="java.lang.String" value="java"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCkbInglesActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="jCkbInformatica">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Informatica"/>
+        <Property name="text" type="java.lang.String" value="Banco de Dados"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCkbInformaticaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButtonVerificar">
+    <Component class="javax.swing.JButton" name="jBtnVerificar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Verificar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonVerificarActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnVerificarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButtonMarcar">
+    <Component class="javax.swing.JButton" name="jBtnMarcar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Marcar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonMarcarActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnMarcarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButtonDesmarcar">
+    <Component class="javax.swing.JButton" name="jBtnDesmarcar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Desmarcar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonDesmarcarActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBtnDesmarcarActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

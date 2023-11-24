@@ -4,6 +4,8 @@
  */
 package view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Geral
@@ -28,42 +30,47 @@ public class Exemplo4 extends javax.swing.JFrame {
 
         jCkbIngles = new javax.swing.JCheckBox();
         jCkbInformatica = new javax.swing.JCheckBox();
-        jButtonVerificar = new javax.swing.JButton();
-        jButtonMarcar = new javax.swing.JButton();
-        jButtonDesmarcar = new javax.swing.JButton();
+        jBtnVerificar = new javax.swing.JButton();
+        jBtnMarcar = new javax.swing.JButton();
+        jBtnDesmarcar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jCkbIngles.setText("Ingles");
+        jCkbIngles.setText("java");
+        jCkbIngles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCkbInglesActionPerformed(evt);
+            }
+        });
 
-        jCkbInformatica.setText("Informatica");
+        jCkbInformatica.setText("Banco de Dados");
         jCkbInformatica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCkbInformaticaActionPerformed(evt);
             }
         });
 
-        jButtonVerificar.setText("Verificar");
-        jButtonVerificar.addActionListener(new java.awt.event.ActionListener() {
+        jBtnVerificar.setText("Verificar");
+        jBtnVerificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonVerificarActionPerformed(evt);
+                jBtnVerificarActionPerformed(evt);
             }
         });
 
-        jButtonMarcar.setText("Marcar");
-        jButtonMarcar.addActionListener(new java.awt.event.ActionListener() {
+        jBtnMarcar.setText("Marcar");
+        jBtnMarcar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonMarcarActionPerformed(evt);
+                jBtnMarcarActionPerformed(evt);
             }
         });
 
-        jButtonDesmarcar.setText("Desmarcar");
-        jButtonDesmarcar.addActionListener(new java.awt.event.ActionListener() {
+        jBtnDesmarcar.setText("Desmarcar");
+        jBtnDesmarcar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonDesmarcarActionPerformed(evt);
+                jBtnDesmarcarActionPerformed(evt);
             }
         });
 
@@ -84,10 +91,10 @@ public class Exemplo4 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jCkbIngles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jCkbInformatica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonVerificar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonMarcar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonDesmarcar, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE))
-                .addContainerGap(211, Short.MAX_VALUE))
+                    .addComponent(jBtnVerificar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBtnMarcar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jBtnDesmarcar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(197, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -96,34 +103,49 @@ public class Exemplo4 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jCkbInformatica)
                 .addGap(18, 18, 18)
-                .addComponent(jButtonVerificar)
+                .addComponent(jBtnVerificar)
                 .addGap(18, 18, 18)
-                .addComponent(jButtonMarcar)
+                .addComponent(jBtnMarcar)
                 .addGap(18, 18, 18)
-                .addComponent(jButtonDesmarcar)
+                .addComponent(jBtnDesmarcar)
                 .addGap(0, 43, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVerificarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonVerificarActionPerformed
+    private void jBtnVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnVerificarActionPerformed
+        String selecao = "Selecionados: ";
+        if(jCkbIngles.isSelected()){
+            selecao+="\n"+jCkbIngles.getText();
+        }
+        if(jCkbInformatica.isSelected()){
+           selecao+="\n"+jCkbInformatica.getText();
+        }
+        if((!jCkbIngles.isSelected())&&(!jCkbInformatica.isSelected())){
+            JOptionPane.showMessageDialog(null, "Nenhum curso selecionado");
+        } else {
+            JOptionPane.showMessageDialog(null, selecao);
+        }
+    }//GEN-LAST:event_jBtnVerificarActionPerformed
 
-    private void jButtonMarcarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMarcarActionPerformed
+    private void jBtnMarcarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnMarcarActionPerformed
         jCkbInformatica.setSelected(true);
         jCkbIngles.setSelected(true);
-    }//GEN-LAST:event_jButtonMarcarActionPerformed
+    }//GEN-LAST:event_jBtnMarcarActionPerformed
 
-    private void jButtonDesmarcarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDesmarcarActionPerformed
+    private void jBtnDesmarcarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnDesmarcarActionPerformed
         jCkbInformatica.setSelected(false);
         jCkbIngles.setSelected(false);
-    }//GEN-LAST:event_jButtonDesmarcarActionPerformed
+    }//GEN-LAST:event_jBtnDesmarcarActionPerformed
 
     private void jCkbInformaticaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCkbInformaticaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCkbInformaticaActionPerformed
+
+    private void jCkbInglesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCkbInglesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCkbInglesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,9 +183,9 @@ public class Exemplo4 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonDesmarcar;
-    private javax.swing.JButton jButtonMarcar;
-    private javax.swing.JButton jButtonVerificar;
+    private javax.swing.JButton jBtnDesmarcar;
+    private javax.swing.JButton jBtnMarcar;
+    private javax.swing.JButton jBtnVerificar;
     private javax.swing.JCheckBox jCkbInformatica;
     private javax.swing.JCheckBox jCkbIngles;
     private javax.swing.JMenu jMenu1;
