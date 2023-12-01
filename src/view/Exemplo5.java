@@ -99,7 +99,6 @@ public class Exemplo5 extends javax.swing.JFrame {
         } else if(jRdBtnFeminino.isSelected()){
             JOptionPane.showMessageDialog(null, "Feminino selecionado");
         }
-        
     }//GEN-LAST:event_jBtnVerificarActionPerformed
 
     private void jRdBtnFemininoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRdBtnFemininoActionPerformed
