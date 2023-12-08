@@ -66,6 +66,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenu2.setMnemonic('b');
         jMenu2.setText("Sobre");
+        jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu2MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu2);
 
         Sair.setMnemonic('s');
@@ -107,6 +112,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         Exemplo4 tela = new Exemplo4();
         tela.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
+        Sobre tela = new Sobre();
+        tela.setVisible(true);
+    }//GEN-LAST:event_jMenu2MouseClicked
 
     /**
      * @param args the command line arguments
